@@ -1,0 +1,40 @@
+﻿
+
+@using _5951071067_NguyenThanhNhan.Models
+@model IEnumerable<Employee>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Sr no.</th>
+            <th>Employ Name</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Departmet</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Sr_no </td>
+            <td>@item.Emp_name </td>
+            <td>@item.City </td>
+            <td>@item.State </td>
+            <td>@item.Contry </td>
+            <td>@item.Department</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Sr_no">Edit</a>
+                <a asp-action="Delete" asp-route-id="@item.Sr_no">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+
